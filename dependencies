@@ -1,0 +1,3 @@
+part: 'pq-gcc',      branch: '4.9.1'
+part: 'pq-readline', branch: '6.3'
+part: 'pq-zlib',     branch: '1.2.8'
