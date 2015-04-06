@@ -7,7 +7,9 @@ pq_postgresql_configuration_flags += --prefix=$(part_dir)
 
 build-stamp: stage-stamp
 	$(MAKE) -C $(pq_part_name) mkinstalldirs=$(part_dir)
+	$(MAKE) -C $(pq_part_name)/contrib/pgcrypto  mkinstalldirs=$(part_dir)
 	$(MAKE) -C $(pq_part_name) mkinstalldirs=$(part_dir) DESTDIR=$(stage_dir) install
+	$(MAKE) -C $(pq_part_name)/contrib/pgcrypto mkinstalldirs=$(part_dir) DESTDIR=$(stage_dir) install
 	touch $@
 
 stage-stamp: configure-stamp
